@@ -4,6 +4,7 @@ from Chatapp.AIModel import GetResponse,messages #importing Ai model and message
 from .models import ChatMessages #importing models
 import google.generativeai as ai #importing Google generative module
 import os
+from django.views.decorators.csrf import csrf_exempt
 from dotenv import load_dotenv,find_dotenv #For Retriving Apikey from .env
 
 
@@ -54,6 +55,7 @@ def Generate_prompt():
         return "An Error Occured"
     
 #Home page
+@csrf_exempt
 def ChatPage(request):
     messages.clear() #If We click a newchat or reload then the previous conversation will be deleted beacause this is the list where the conversations are stored and given to the Ai model.It is imported from 'AIModel.py' module
     global unique_id,prompt #Globally Declared for Modifying the uniqued id and prompt
@@ -71,6 +73,7 @@ def ChatPage(request):
     return render(request,"index.html",{"chatids":chatids,"prompts":prompts}) #For a Successfull response it will send the data to template
 
 #This Function Responsible for recieving user input from javascript and sending the response to javascript also stores the coversation in models
+@csrf_exempt
 def ResponseResult(request):
     global unique_id
     if request.method=="POST":
@@ -101,7 +104,8 @@ def ResponseResult(request):
     else:
         return JsonResponse({"response":"false"})
 
-#This Function is Responsible for retriving Previous Conversations   
+#This Function is Responsible for retriving Previous Conversations
+@csrf_exempt   
 def Conversation_History(request,chatid):
     messages.clear() #If we click one of the previous chat it will clear the current conversation.It is imported from 'AIModel.py' module
     global unique_id

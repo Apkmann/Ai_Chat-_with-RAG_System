@@ -349,4 +349,9 @@ function newchat()
   window.location.href="/";
 }
 
+function newRAGchat()
+{
+  window.location.href="/RAG";
+}
+
 sidebar.scrollTop=-sidebar.scrollHeight;

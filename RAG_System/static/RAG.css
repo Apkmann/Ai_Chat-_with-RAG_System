@@ -17,6 +17,17 @@ header
     width: 100%;
 }
 
+#redirect
+{
+    color: #b4b4b4;
+    font-size: 19px;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 200px;
+}
+
 #newonechat,#sideappear,#sideappearh
 {
     background: transparent;
@@ -26,12 +37,12 @@ header
     width: 50px;
 }
 
-#newonechat:hover,#sideappear:hover,#sideappearh:hover
+#newonechat:hover,#sideappear:hover,#sideappearh:hover,#redirect:hover
 {
     background-color: #76767623;
     border-radius: 5px;
 }
-#newonechat:active,#sideappear:active,#sideappearh:active
+#newonechat:active,#sideappear:active,#sideappearh:active,#redirect:active
 {
     outline:auto;
 }
@@ -113,32 +124,7 @@ header
     z-index: -1000;
 }
 
-#examples
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 270px;
-    gap: 17px;
-    font-size: 13px;
-    color: #b4b4b4;
-}
 
-#examples p
-{
-    border-radius: 10px;
-    border:1px #767676 solid;
-    padding:10px;
-    cursor: pointer;
-    width: 200px;
-}
-
-#examples p:hover
-{
-    background-color: #383838;
-}
 
 #send:active
 {
@@ -190,7 +176,10 @@ header
     cursor: pointer;
 }
 
-
+#send p
+{
+    opacity: 0.3;
+}
 
 #sidebar
 {
@@ -266,6 +255,121 @@ header
 }
 
 
+#uploadfile
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 50px;
+    width: 300px;
+    z-index: 300;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    right: 50%;
+    top: 56%;
+    bottom: 50%;
+    color: white;
+}
+
+#uploadfile button
+{
+    background-color: #767676;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 33px;
+    color: white;
+}
+
+#uploadfile button:hover
+{
+    background-color: white;
+    color:black;
+}
+
+#uploadfile button:active
+{
+    transform: scale(1.2);
+}
+
+#uploadfile input[type='file']::file-selector-button
+{
+    background-color: #767676;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 33px;
+    color: white;
+}
+
+#uploadfile input[type='file']::file-selector-button:hover
+{
+    background-color: white;
+    color:black;
+}
+
+
+#Loading
+{
+    display: none;
+    height: 250px;
+    width: 250px;
+    background-color: #212121;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top:50%;
+    bottom: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: -1000;
+    transform: translate(-50%,-50%);
+}
+
+#spinner
+{
+    display: none;
+    height: 380px;
+    width: 140px;
+    background-color: white;
+    animation: spin 1s infinite ease-in;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+#Loading::after
+{
+    content: "Loading...";
+    justify-content: center;
+    align-items: center;
+    color: #383838;
+    height: 245px;
+    width: 245px;
+    background-color:#212121;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top:50%;
+    bottom: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+
 @media screen and (max-width:884px)
 {
     header
@@ -316,59 +420,11 @@ header
 {
     #chatcontent
     {
-        font-size: 5px;
+        font-size: 10px;
     }
 
 }
 
-@media screen and (max-width:790px)
-{
-    #examples
-    {
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 290px;
-    gap:10px;
-    font-size: 11px;
-    }
-
-    #examples p
-    {
-    padding:10px;
-    }
-}
-
-@media screen and (max-width:345px)
-{
-    #examples
-    {
-    font-size: 11px;
-    width: 20px;
-    }
-
-    #examples p
-    {
-    gap:5px;
-    padding:9px;
-    }
-}
-
-@media screen and (max-width:330px)
-{
-    #examples
-    {
-    font-size: 10px;
-    width: 70px;
-    }
-
-    #examples p
-    {
-    padding:5px;
-    }
-}
 
 @media screen and (max-width:884px)
 {

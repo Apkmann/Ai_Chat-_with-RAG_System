@@ -17,6 +17,17 @@ header
     width: 100%;
 }
 
+#redirect
+{
+    color: #b4b4b4;
+    font-size: 17px;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 200px;
+}
+
 #newonechat,#sideappear,#sideappearh
 {
     background: transparent;
@@ -26,12 +37,12 @@ header
     width: 50px;
 }
 
-#newonechat:hover,#sideappear:hover,#sideappearh:hover
+#newonechat:hover,#sideappear:hover,#sideappearh:hover,#redirect:hover
 {
     background-color: #76767623;
     border-radius: 5px;
 }
-#newonechat:active,#sideappear:active,#sideappearh:active
+#newonechat:active,#sideappear:active,#sideappearh:active,#redirect:active
 {
     outline:auto;
 }
